@@ -167,7 +167,7 @@ public class ActivityBrainSample {
         
         // ditch locations older than sample start
         while let oldest = _rawLocations.first, oldest.timestamp < sampleStart {
-            _rawLocations.remove(oldest)
+            _rawLocations.removeElement(oldest)
         }
     }
 
@@ -351,7 +351,7 @@ extension ActivityBrainSample {
     
     func removeLocation(_ location: CLLocation) {
         mutex.sync {
-            _filteredLocations.remove(location)
+            _filteredLocations.removeElement(location)
             
             // can't have a speed or course variance on empty sample
             if _filteredLocations.isEmpty {

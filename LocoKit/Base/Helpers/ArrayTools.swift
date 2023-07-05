@@ -39,8 +39,8 @@ public extension Array where Element: FloatingPoint {
 }
 
 public extension Array where Element: Equatable {
-    mutating func remove(_ object: Element) { if let index = index(of: object) { remove(at: index) } }
-    mutating func removeObjects(_ array: [Element]) { for object in array { remove(object) } }
+    mutating func removeElement(_ object: Element) { if let index = index(of: object) { remove(at: index) } }
+    mutating func removeObjects(_ array: [Element]) { for object in array { removeElement(object) } }
 }
 
 public extension Array where Element: Comparable {

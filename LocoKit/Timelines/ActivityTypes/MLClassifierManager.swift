@@ -57,7 +57,7 @@ extension MLClassifierManager {
 
         // radius is too big for stationary. so let's zero out its score
         var resultsArray = results.array
-        resultsArray.remove(stationary)
+        resultsArray.removeElement(stationary)
         resultsArray.append(ClassifierResultItem(name: .stationary, score: 0,
                                                  modelAccuracyScore: stationary.modelAccuracyScore))
 
@@ -78,7 +78,7 @@ extension MLClassifierManager {
 
         // radius is too big for stationary. so let's zero out its score
         var resultsArray = results.array
-        resultsArray.remove(stationary)
+        resultsArray.removeElement(stationary)
         resultsArray.append(ClassifierResultItem(name: .stationary, score: 0,
                                                  modelAccuracyScore: stationary.modelAccuracyScore))
 

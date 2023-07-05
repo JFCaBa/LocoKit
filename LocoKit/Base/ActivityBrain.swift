@@ -361,7 +361,7 @@ internal extension ActivityBrain {
         var best: CMActivityTypeEvent?
         samplesMutex.sync {
             if let existing = coreMotionActivityConfidences.filter({ $0.name == name }).first {
-                coreMotionActivityConfidences.remove(existing)
+                coreMotionActivityConfidences.removeElement(existing)
             }
 
             coreMotionActivityConfidences.append(CMActivityTypeEvent(name: name, confidence: cmMotionActivityConfidence, date: date))

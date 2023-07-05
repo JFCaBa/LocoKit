@@ -210,7 +210,7 @@ public struct LocoKitService {
         if useStaging { os_log("USING STAGING", type: .debug) }
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            self.mutex.sync { self.fetchingQueries.remove(query) }
+            self.mutex.sync { self.fetchingQueries.removeElement(query) }
 
             if let error = error { print(error); return }
 
